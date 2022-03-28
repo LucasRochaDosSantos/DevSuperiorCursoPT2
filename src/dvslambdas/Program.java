@@ -17,7 +17,9 @@ public class Program {
 		Locale.setDefault(Locale.US);
 		List<Product> produtos = new ArrayList<>();
 		String path = "C:\\\\Users\\\\Lucas Rocha\\\\Documents\\\\produto.txt";
-
+        
+		Comparator<Product> comp = (p1, p2) ->  p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
+        
 		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
 			String linha = br.readLine();
 			while (linha != null) {
@@ -26,13 +28,8 @@ public class Program {
 				linha = br.readLine();
 			}
 
-			produtos.sort(new Comparator<Product>(){
-				@Override
-				public int compare(Product p1, Product p2) {
-					return p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
-				}
-			});
-
+			produtos.sort(comp);
+            
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
