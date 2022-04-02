@@ -13,6 +13,10 @@ public class Program {
 		cookies.put("email", "maria@gmail.com");
 		cookies.put("phone", "98652314");
 		
+		Integer a = new Integer(3);
+		Integer b = new Integer(3);
+		
+		System.out.println(a == b);
 		cookies.put("email", "maria@gmail.com.br");
 		System.out.println("Contains 'phone' key: " + cookies.containsKey("phone"));
 		
@@ -23,5 +27,10 @@ public class Program {
 		}
 		System.out.println("Contains 'phone' key: " + cookies.containsKey("phone"));
         System.out.println(cookies.size());
+        
+        String name = "abc";
+        String nameT = "abc";
+        
+        System.out.println(name.equals(nameT));
 	}
 }
